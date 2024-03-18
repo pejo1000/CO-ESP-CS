@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouton de Parrainage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-10px);
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: #66b3ff;
+            color: #fff;
+        }
+
+        .instructions {
+            font-weight: bold;
+        }
+
+        .parrainage-text {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-size: 20px">USERS REFERRAL SPACE BY LEARN EARN NETWORK</h1>
+    <button onclick="location.reload()">Actualiser</button>
+</header>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="parrainage-text">
+        <p>Devenez parrain et faites découvrir nos services à vos proches !</p>
+    </div>
+    
+    <!-- Bouton de parrainage -->
+    <button onclick="afficherFormulaire()">Parrainer</button>
+
+    <!-- Formulaire pour entrer l'email du filleul -->
+    <div id="formulaireParrainage" style="display: none; margin-top: 20px;">
+        <label for="emailFilleul">Veuillez entrer l'adresse e-mail de votre filleul, puis copiez le lien que vous devez lui envoyer pour son inscription. <span class="instructions">N'oubliez surtout pas de lui indiquer de s'abonner directement à votre compte.</span> Enfin, veuillez également lui envoyer le lien pour qu'il puisse s'abonner à vous : <a href="https://learnearnnetwork77.wixsite.com/co-esp-cs/members" target="_blank">https://learnearnnetwork77.wixsite.com/co-esp-cs/members</a> à la fin de son inscription</label><br>
+        <input type="email" id="emailFilleul" name="emailFilleul" placeholder="Adresse e-mail du filleul" required><br><br>
+        <button onclick="envoyerMessage()">Envoyer un message</button>
+        <button onclick="copierLien()">Copier ce lien</button>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        &copy; 2024 Learn Earn Network. Tous droits réservés. Powered by PEJO CORPORATION
+    </div>
+
+    <!-- Script pour afficher le formulaire de parrainage -->
+    <script>
+        function afficherFormulaire() {
+            document.getElementById("formulaireParrainage").style.display = "block";
+        }
+
+        function envoyerMessage() {
+            var emailFilleul = document.getElementById("emailFilleul").value;
+            var message = "Cliquer sur le lien suivant pour vous inscrire : https://learnearnnetwork77.wixsite.com/co-esp-cs/plans-pricing?appSectionParams=%7B%22planIds%22%3A%22a366d1b5-7189-4311-9514-7c93d09b1867%22%7D";
+            window.location.href = "mailto:" + emailFilleul + "?subject=Invitation%20à%20s'inscrire&body=" + message;
+        }
+
+        function copierLien() {
+            var lien = "https://learnearnnetwork77.wixsite.com/co-esp-cs/plans-pricing?appSectionParams=%7B%22planIds%22%3A%22a366d1b5-7189-4311-9514-7c93d09b1867%22%7D";
+            var tempInput = document.createElement("input");
+            tempInput.value = lien;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Lien copié : " + lien);
+        }
+    </script>
+</div>
+
+</body>
+</html>
