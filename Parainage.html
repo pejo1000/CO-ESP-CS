@@ -1,133 +1,144 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USERS REFERRAL SPACE BY LEARN EARN NETWORK</title>
-    <link rel="icon" href="Image/icon.PNG" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Bouton de Parrainage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             background-color: #f8f9fa;
+            color: #333;
         }
 
         header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 0;
+            font-size: 1.5em;
+            margin-bottom: 20px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #f90;
+            width: 100%;
+            padding: 20px 0;
+            background-color: #333;
+            margin-bottom: 20px;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
+        section {
+            text-align: center;
+            margin-bottom: 20px;
             padding: 20px;
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: background-color 0.3s, transform 0.3s ease-in-out;
+            width: 80%;
+            max-width: 500px;
         }
 
-        .container:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-10px);
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        button {
+            padding: 8px 12px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 1em;
         }
 
         button {
             background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px;
+            color: white;
             cursor: pointer;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
         }
 
         button:hover {
-            background-color: #66b3ff;
-            color: #fff;
+            background-color: #0056b3;
         }
 
-        .instructions {
+        p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        strong {
             font-weight: bold;
         }
 
-        .parrainage-text {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 18px;
-            color: #333;
-        }
-
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        input[type="email"]:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-
-        .copyright {
-            font-size: 12px;
-            color: #999;
-            margin-top: 20px;
+        #nombreParrainages,
+        #nombreMembres {
+            font-size: 1.2em;
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1 style="font-size: 20px">USERS REFERRAL SPACE BY LEARN EARN NETWORK</h1>
-    <button onclick="location.reload()">Actualiser</button>
-</header>
-<br>
-<br>
-<br>
-<div class="container">
-    <div class="parrainage-text">
-        <p>Devenez parrain et faites découvrir nos services à vos proches !</p>
-    </div>
-    
-    <!-- Bouton de parrainage -->
-    <button onclick="afficherFormulaire()">Parrainer</button>
+    <header>
+        <h1>Parrainage Space</h1>
+    </header>
 
-    <!-- Formulaire pour entrer l'email du filleul -->
-    <div id="formulaireParrainage" style="display: none; margin-top: 20px;">
-        <label for="emailFilleul">Veuillez entrer l'adresse e-mail de votre filleul, puis copiez le lien que vous devez lui envoyer pour son inscription. <span class="instructions">N'oubliez surtout pas de lui indiquer de s'abonner directement à votre compte.</span> Enfin, veuillez également lui envoyer le lien pour qu'il puisse s'abonner à vous : <a href="https://learnearnnetwork77.wixsite.com/co-esp-cs/members" target="_blank">https://learnearnnetwork77.wixsite.com/co-esp-cs/members</a> à la fin de son inscription</label><br>
-        <input type="email" id="emailFilleul" name="emailFilleul" placeholder="Adresse e-mail du filleul" required><br><br>
-        <button onclick="envoyerMessage()">Envoyer un message</button>
+    <section>
+        <h2>Parrainer</h2>
+        <label for="emailFilleul">Veuillez coller l'adresse e-mail de votre filleul :</label><br>
+        <input type="email" id="emailFilleul" name="emailFilleul" required><br>
+        <button onclick="envoyerMessage()">Envoyer un message</button><br>
+        <p>Puis cliquez sur "copier" afin de coller le lien dans la boîte de messagerie électronique que vous enverrez
+            :</p>
         <button onclick="copierLien()">Copier ce lien</button>
-    </div>
+    </section>
 
-    <!-- Copyright -->
-    <div class="copyright">
-        &copy; 2024 Learn Earn Network. Tous droits réservés. Powered by PEJO CORPORATION
-    </div>
+    <section>
+        <h2>Partager sur WhatsApp</h2>
+        <button onclick="partagerSurWhatsApp()">Partager sur WhatsApp</button><br>
+        <p><strong>NB :</strong> Ce que vous partagez sera le moyen par lequel votre prospect pourra s'abonner à
+            vous, aimer vos posts tout en cherchant votre profil ou nom pour s'abonner.</p>
+    </section>
 
-    <!-- Script pour afficher le formulaire de parrainage -->
+    <section id="nombreParrainages">
+        <h2>Nombre de parrainages :</h2>
+        <p id="nombreParrainagesAffiche">0</p>
+    </section>
+
+    <section id="nombreMembres">
+        <h2>Nombre de membres parrainés :</h2>
+        <p id="nombreMembresAffiche">0</p>
+    </section>
+
     <script>
-        function afficherFormulaire() {
-            document.getElementById("formulaireParrainage").style.display = "block";
+        var nombreParrainages = 0;
+        var nombreMembres = 0;
+
+        // Charger l'API Google Sheets
+        gapi.load('client', init);
+
+        function init() {
+            gapi.client.init({
+                apiKey: 'VOTRE_API_KEY', // Remplacez par votre clé API Google Sheets
+                discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+            }).then(function () {
+                // L'API Google Sheets est prête à être utilisée
+            });
         }
 
         function envoyerMessage() {
             var emailFilleul = document.getElementById("emailFilleul").value;
-            var message = "Cliquer sur le lien suivant pour vous inscrire : https://learnearnnetwork77.wixsite.com/co-esp-cs/plans-pricing?appSectionParams=%7B%22planIds%22%3A%22a366d1b5-7189-4311-9514-7c93d09b1867%22%7D";
-            window.location.href = "mailto:" + emailFilleul + "?subject=Invitation%20à%20s'inscrire&body=" + message;
+            var message = "Cliquez sur le lien suivant pour vous inscrire : https://learnearnnetwork77.wixsite.com/co-esp-cs/plans-pricing?appSectionParams=%7B%22planIds%22%3A%22a366d1b5-7189-4311-9514-7c93d09b1867%22%7D";
+            window.location.href = "mailto:" + emailFilleul + "?subject=Invitation%20%C3%A0%20s'inscrire&body=" +
+                encodeURIComponent(message);
+            incrementerNombreParrainages();
+            verifierBadgeMembre(emailFilleul);
         }
 
         function copierLien() {
@@ -140,8 +151,24 @@
             document.body.removeChild(tempInput);
             alert("Lien copié : " + lien);
         }
+
+        function partagerSurWhatsApp() {
+            var lienWhatsApp = "https://wa.me/?text=Voici%20le%20lien%20pour%20vous%20inscrire%20:%20https://learnearnnetwork77.wixsite.com/co-esp-cs/plans-pricing?appSectionParams=%7B%22planIds%22%3A%22a366d1b5-7189-4311-9514-7c93d09b1867%22%7D";
+            window.open
+(lienWhatsApp);
+        }
+
+        function incrementerNombreParrainages() {
+            nombreParrainages++;
+            document.getElementById("nombreParrainagesAffiche").textContent = nombreParrainages;
+        }
+
+        function verifierBadgeMembre(emailFilleul) {
+            // Utilisez l'API Google Sheets pour récupérer les données et vérifier si l'e-mail du filleul apparaît dans la liste des membres avec un badge de membre
+            // Si l'e-mail du filleul a un badge de membre, incrémentez le nombre de membres et mettez à jour l'affichage
+        }
     </script>
-</div>
 
 </body>
+
 </html>
